@@ -212,12 +212,12 @@ export default function CustomersList() {
 
       if (selectedKind === 'ALL' || selectedKind === 'PERSON') {
         const people = await listPeople(searchTerm || undefined);
-        allCustomers = [...allCustomers, ...(people || [])];
+        allCustomers = [...allCustomers, ...(people ?? [])] as Customer[];
       }
 
       if (selectedKind === 'ALL' || selectedKind === 'COMPANY') {
         const companies = await listCompanies(searchTerm || undefined);
-        allCustomers = [...allCustomers, ...(companies || [])];
+        allCustomers = [...allCustomers, ...(companies ?? [])] as Customer[];
       }
 
       setCustomers(allCustomers);
@@ -277,8 +277,9 @@ export default function CustomersList() {
   };
 
   const handleDeleteClick = () => {
+    setAnchorEl(null); // fecha o menu
     setDeleteDialog(true);
-    handleMenuClose();
+    // não chama handleMenuClose() para manter selectedCustomer e poder excluir
   };
 
   const handleDeleteConfirm = async () => {
@@ -289,9 +290,14 @@ export default function CustomersList() {
         setDeleteDialog(false);
         setSelectedCustomer(null);
       } catch (err: any) {
+        const msg =
+          err.response?.data?.message ||
+          err.response?.data?.error ||
+          (typeof err.response?.data === 'string' ? err.response.data : null) ||
+          'Erro ao excluir cliente. O cliente pode possuir vínculos (contratos, endereços, pessoas) que impedem a exclusão.';
         openSnackbar({
           open: true,
-          message: err.response?.data?.message || 'Erro ao deletar cliente',
+          message: msg,
           variant: 'alert',
           alert: { color: 'error' }
         } as any);

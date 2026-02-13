@@ -25,12 +25,13 @@ import { Theme } from '@mui/material/styles';
 import useAvatarUrl from 'hooks/useAvatarUrl';
 
 import EditOutlined from '@ant-design/icons/EditOutlined';
-import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
+import LockOutlined from '@ant-design/icons/LockOutlined';
 import TeamOutlined from '@ant-design/icons/TeamOutlined';
 import UserAddOutlined from '@ant-design/icons/UserAddOutlined';
 import KeyOutlined from '@ant-design/icons/KeyOutlined';
 
-import { listUsers, deleteUser, getUser } from 'api/users';
+import { listUsers, getUser } from 'api/users';
+import { blockUser } from 'api/blocks';
 import { UserRow } from 'types/users';
 import { openSnackbar } from 'api/snackbar';
 import { formatDateOnlyBR, toDateOnly } from 'utils/date';
@@ -74,10 +75,10 @@ export default function UsersPage() {
   const [extraRulesOpen, setExtraRulesOpen] = useState(false);
   const [extraRulesUser, setExtraRulesUser] = useState<{ id: string; name: string } | null>(null);
 
-  // --- Confirmação de deleção ---
-  const [deleteOpen, setDeleteOpen] = useState(false);
-  const [deleteTarget, setDeleteTarget] = useState<{ id: string; name: string; email?: string } | null>(null);
-  const [deleting, setDeleting] = useState(false);
+  // --- Confirmação de bloqueio de conta ---
+  const [blockOpen, setBlockOpen] = useState(false);
+  const [blockTarget, setBlockTarget] = useState<{ id: string; name: string; email?: string } | null>(null);
+  const [blocking, setBlocking] = useState(false);
 
   // Responsividade
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
@@ -129,9 +130,9 @@ export default function UsersPage() {
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [page, limit, sortBy, sortOrder, debouncedSearch]);
 
-  const requestDelete = (u: UserRow) => {
-    setDeleteTarget({ id: u.id, name: u.name, email: u.email });
-    setDeleteOpen(true);
+  const requestBlock = (u: UserRow) => {
+    setBlockTarget({ id: u.id, name: u.name, email: u.email });
+    setBlockOpen(true);
   };
 
   const openCreate = () => {
@@ -284,9 +285,9 @@ export default function UsersPage() {
                 </Tooltip>
               </Permission>
               <Permission rule="users.delete">
-                <Tooltip title="Excluir">
-                  <IconButton size="small" color="error" onClick={() => requestDelete(user)}>
-                    <DeleteOutlined />
+                <Tooltip title="Bloquear">
+                  <IconButton size="small" color="warning" onClick={() => requestBlock(user)}>
+                    <LockOutlined />
                   </IconButton>
                 </Tooltip>
               </Permission>
@@ -541,9 +542,9 @@ export default function UsersPage() {
                             </Tooltip>
                           </Permission>
                           <Permission rule="users.delete">
-                            <Tooltip title="Excluir">
-                              <IconButton color="error" onClick={() => requestDelete(u)}>
-                                <DeleteOutlined />
+                            <Tooltip title="Bloquear">
+                              <IconButton color="warning" onClick={() => requestBlock(u)}>
+                                <LockOutlined />
                               </IconButton>
                             </Tooltip>
                           </Permission>
@@ -627,47 +628,48 @@ export default function UsersPage() {
         userName={extraRulesUser?.name}
       />
 
-      {/* Confirmação de deleção */}
+      {/* Confirmação de bloqueio de conta */}
       <ConfirmDeleteDialog
-        open={deleteOpen}
+        open={blockOpen}
+        confirmText="Bloquear"
+        confirmColor="warning"
+        variant="confirm"
         onCancel={() => {
-          if (deleting) return;
-          setDeleteOpen(false);
-          setDeleteTarget(null);
+          if (blocking) return;
+          setBlockOpen(false);
+          setBlockTarget(null);
         }}
         onConfirm={async () => {
-          if (!deleteTarget) return;
+          if (!blockTarget) return;
           try {
-            setDeleting(true);
-            const response = await deleteUser(deleteTarget.id);
+            setBlocking(true);
+            await blockUser(blockTarget.id, {});
             openSnackbar({
               open: true,
-              message: response.message || 'Colaborador removido!',
+              message: 'Colaborador bloqueado. A conta foi enviada para bloqueio.',
               variant: 'alert',
               alert: { color: 'success' }
             } as any);
-            // se apagou o único da página e não é a primeira, volte uma página
-            if (items.length === 1 && page > 0) setPage((p) => p - 1);
-            else load();
+            load();
           } catch (err: any) {
             openSnackbar({
               open: true,
-              message: err?.response?.data?.message || 'Não foi possível remover',
+              message: err?.response?.data?.message || 'Não foi possível bloquear o colaborador',
               variant: 'alert',
               alert: { color: 'error' }
             } as any);
           } finally {
-            setDeleting(false);
-            setDeleteOpen(false);
-            setDeleteTarget(null);
+            setBlocking(false);
+            setBlockOpen(false);
+            setBlockTarget(null);
           }
         }}
-        loading={deleting}
-        title="Remover colaborador"
+        loading={blocking}
+        title="Bloquear colaborador"
         description={
           <span>
-            Esta ação <b>não pode ser desfeita</b>. Deseja remover o colaborador <b>{deleteTarget?.name}</b>
-            {deleteTarget?.email ? ` (${deleteTarget.email})` : ''}?
+            O colaborador <b>{blockTarget?.name}</b>
+            {blockTarget?.email ? ` (${blockTarget.email})` : ''} será <b>bloqueado</b> e não poderá acessar o sistema. A conta irá para a lista de bloqueio. Deseja continuar?
           </span>
         }
       />

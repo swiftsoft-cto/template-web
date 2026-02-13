@@ -1,6 +1,0 @@
-Enhance transcriptions navigation and state restoration
-
-- Updated TranscriptionsPage to manage tab state based on navigation, allowing users to return to the correct tab after viewing details.
-- Modified TranscriptionDetailPage to restore navigation state, ensuring users return to the appropriate tab and folder when going back.
-- Enhanced TranscriptionsSharedWithMe to utilize restored state for user and folder selection, improving user experience when accessing shared transcriptions.
-- Updated TranscriptionsExplorer to pass navigation state when selecting transcriptions, streamlining the transition between views.

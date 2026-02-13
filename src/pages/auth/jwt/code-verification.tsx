@@ -1,0 +1,42 @@
+// material-ui
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
+// project imports
+import AuthWrapper from 'sections/auth/AuthWrapper';
+import AuthCodeVerification from 'sections/auth/jwt/AuthCodeVerification';
+
+// ================================|| JWT - VERIFICAÇÃO DE CÓDIGO ||================================ //
+
+export default function CodeVerification() {
+  let email = window.localStorage.getItem('email');
+  let finalArr: string[] = [];
+
+  if (email) {
+    let emailSplit = email.split('');
+    let len = emailSplit.indexOf('@');
+    emailSplit.forEach((item, pos) => {
+      pos >= 1 && pos <= len - 2 ? finalArr.push('*') : finalArr.push(emailSplit[pos]);
+    });
+  }
+
+  return (
+    <AuthWrapper>
+      <Grid container spacing={3}>
+        <Grid size={12}>
+          <Stack sx={{ gap: 1 }}>
+            <Typography variant="h3">Digite o Código de Verificação</Typography>
+            <Typography color="secondary">Enviamos para o seu e-mail.</Typography>
+          </Stack>
+        </Grid>
+        <Grid size={12}>
+          <Typography>Enviamos o código para {email && finalArr.length > 0 ? finalArr.join('') : '****@company.com'}</Typography>
+        </Grid>
+        <Grid size={12}>
+          <AuthCodeVerification />
+        </Grid>
+      </Grid>
+    </AuthWrapper>
+  );
+}

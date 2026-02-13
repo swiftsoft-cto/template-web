@@ -1,0 +1,44 @@
+/* Century Gothic font definition */
+/* Century Gothic é uma fonte proprietária do Windows, então usamos fallbacks apropriados */
+@font-face {
+  font-family: 'Century Gothic';
+  src: local('Century Gothic'),
+       local('CenturyGothic'),
+       local('CenturyGothic-Regular');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: local('Century Gothic Bold'),
+       local('CenturyGothic-Bold');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: local('Century Gothic Italic'),
+       local('CenturyGothic-Italic');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: local('Century Gothic Bold Italic'),
+       local('CenturyGothic-BoldItalic');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fallback para sistemas que não têm Century Gothic instalada */
+.century-gothic-fallback {
+  font-family: 'Century Gothic', 'Futura', 'Trebuchet MS', Arial, sans-serif;
+}
+

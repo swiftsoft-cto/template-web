@@ -1,0 +1,1005 @@
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <thead>
+        <tr>
+            <th
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                ACORDO PARA DESENVOLVIMENTO DE SOFTWARE PERSONALIZADO
+            </th>
+        </tr>
+    </thead>
+</table>
+<p>&nbsp;</p>
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <colgroup>
+        <col style="width: 50%;">
+        <col style="width: 25%;">
+        <col style="width: 25%;">
+    </colgroup>
+    <tbody>
+        <tr>
+            <td colspan="3"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                SWIFT SOFT
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>NOME:</strong>&nbsp; SWIFT SOFT LTDA
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>CNPJ:</strong>&nbsp; 54.390.046/0001-93
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>ENDEREÇO:</strong>&nbsp; AV VISCONDE DE GUARAPUAVA, 2764, SALA 1502
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>CIDADE:</strong>&nbsp; CURITIBA
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>ESTADO:</strong>&nbsp; PARANÁ
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>REPRESENTANTE LEGAL:</strong>&nbsp; JEAN GUSTAVO MARCONDES RODRIGUES
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>CPF:</strong>&nbsp; 079.124.649-30
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <colgroup>
+        <col style="width: 50%;">
+        <col style="width: 25%;">
+        <col style="width: 25%;">
+    </colgroup>
+    <tbody>
+        <tr>
+            <td colspan="3"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                CLIENTE
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>NOME:</strong>&nbsp; {{CUSTOMER_NAME}}
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>CNPJ:</strong>&nbsp; {{CUSTOMER_CNPJ}}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>ENDEREÇO:</strong>&nbsp; {{CUSTOMER_ADDRESS}}
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>CIDADE:</strong>&nbsp; {{CUSTOMER_ADDRESS_CITY}}
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>ESTADO:</strong>&nbsp; {{CUSTOMER_ADDRESS_STATE}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>REPRESENTANTE LEGAL:</strong>&nbsp; {{PERSON_NAME}}
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>CPF:</strong>&nbsp; {{PERSON_CPF}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<div style="margin-top: 14pt; font-size: 9pt;">
+    <p style="margin: 0 0 9pt 0; text-align: center; font-weight: bold; line-height: 1.15;">
+        DEFINIÇÕES E GLOSSÁRIO DE TERMOS TÉCNICOS:
+    </p>
+
+    <p style="margin: 0 0 6pt 0; line-height: 1.15;">
+        Para melhor compreensão deste instrumento, seguem as definições dos principais termos técnicos utilizados.
+    </p>
+
+    <p style="margin: 0 0 4pt 0; line-height: 1.15;">Versões A/B e Trilhas Alternativas:</p>
+    <ol style="margin: 0 0 6pt 19pt; padding: 0; line-height: 1.15;">
+        <li>
+            Versões de teste das trilhas de aprendizagem que são disponibilizadas em ambiente de homologação para
+            validação
+            antes do lançamento em produção.
+        </li>
+    </ol>
+
+    <p style="margin: 0 0 4pt 0; line-height: 1.15;">Ambientes de Desenvolvimento:</p>
+    <ol style="margin: 0 0 6pt 19pt; padding: 0; line-height: 1.15;">
+        <li>Desenvolvimento: Código rodando na máquina do desenvolvedor;</li>
+        <li>Homologação: Ambiente de testes onde o CLIENTE valida novas funcionalidades antes do lançamento;</li>
+        <li>Produção: Ambiente onde os usuários finais acessam o sistema.</li>
+    </ol>
+
+    <p style="margin: 0 0 4pt 0; line-height: 1.15;">Camada de Override por Políticas do Cliente:</p>
+    <ol style="margin: 0 0 6pt 19pt; padding: 0; line-height: 1.15;">
+        <li>
+            Mecanismo que permite ao CLIENTE sobrescrever regras padrão do sistema com suas próprias políticas e
+            diretrizes
+            empresariais. As políticas de privacidade serão desenvolvidas após a primeira versão do software.
+        </li>
+    </ol>
+
+    <p style="margin: 0 0 4pt 0; line-height: 1.15;">Tecnologia Agregada:</p>
+    <ol style="margin: 0 0 6pt 19pt; padding: 0; line-height: 1.15;">
+        <li>
+            Ferramentas, módulos, componentes e funcionalidades pré-existentes de propriedade da Swift Soft que
+            podem ser
+            adaptados e incorporados ao projeto do CLIENTE para acelerar o desenvolvimento, desde que não
+            comprometam a
+            exclusividade ou propriedade intelectual do CLIENTE sobre o produto final.
+        </li>
+    </ol>
+
+    <p style="margin: 0 0 4pt 0; line-height: 1.15;">Diagnóstico Prévio:</p>
+    <ol style="margin: 0 0 6pt 19pt; padding: 0; line-height: 1.15;">
+        <li>
+            Avaliação inicial do usuário que identifica seu perfil, nível de conhecimento, objetivos e necessidades,
+            servindo como
+            base para a geração da jornada personalizada.
+        </li>
+    </ol>
+    <p>&nbsp;</p>
+    {{SCOPE_HTML}}
+    <p>&nbsp;</p>
+</div>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <colgroup>
+        <col style="width: 28%;">
+        <col style="width: 18%;">
+        <col style="width: 18%;">
+        <col style="width: 18%;">
+        <col style="width: 18%;">
+    </colgroup>
+    <tbody>
+        <tr>
+            <td colspan="5"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                INVESTIMENTO POR NÍVEL DE ACESSO E BENEFÍCIOS
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt;"></td>
+            <td
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Startup
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Business
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Advanced
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Premium
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Horas Mensais
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                20h/Mês</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                40h/Mês</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                80h/Mês</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Outsourcing
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Sistema Personalizado
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Analista/Desenvolvedor
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                QA/DevOps/UX-UI
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Não</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Scrum Master/Product Owner
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Não</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Não</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                OK</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Ok</td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                INVESTIMENTO
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                R$2.990,00<br />Mensais
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                R$5.180,00<br />Mensais
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                R$9.600,00<br />Mensais
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                R$16.000,00 mensais
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                PROJETO
+                CONTRATADO</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                ( &nbsp; )</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                ( &nbsp; )</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                ( &nbsp; )</td>
+            <td
+                style="padding: 4pt; text-align: center; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                ( &nbsp; )</td>
+        </tr>
+    </tbody>
+</table>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 0;">
+    <tbody>
+        <tr>
+            <td style="padding: 6pt; border: 0.75pt solid #000; border-top: none; font-size: 9pt;">
+                <p style="margin: 6pt 0 6pt 0; line-height: 1.15;">Quanto aos níveis de acesso:</p>
+                <ol type="a" style="margin: 0 0 6pt 19pt; padding: 0;">
+                    <li style="margin: 0 0 4pt 0; line-height: 1.15;">
+                        <strong>Analista/Desenvolvedor:</strong> Entrega técnica do produto. Traduz as necessidades
+                        em software
+                        funcionando, construindo e evoluindo o produto.
+                    </li>
+                    <li style="margin: 0 0 4pt 0; line-height: 1.15;">
+                        <strong>QA/DevOps/UX-UI:</strong> Qualidade, operação e experiência do usuário. Garantem que
+                        o produto seja
+                        confiável, fácil de usar e esteja sempre disponível em produção.
+                    </li>
+                    <li style="margin: 0 0 4pt 0; line-height: 1.15;">
+                        <strong>Scrum Master/Product Owner:</strong> Direciona valor e priorização. Faz o time
+                        trabalhar de forma ágil
+                        e sem bloqueios, mantendo foco e organização. Define prioridades e direciona o que gera mais
+                        valor para o
+                        negócio.
+                    </li>
+                    <li style="margin: 0 0 4pt 0; line-height: 1.15;">
+                        <strong>Observação:</strong> Um mesmo profissional pode exercer mais de uma função (ex:
+                        Desenvolvedor também
+                        atua em QA ou Análise). Garantimos clareza de responsabilidade e não comprometemos a
+                        qualidade, nem a
+                        priorização de produto.
+                    </li>
+                    <li style="margin: 0; line-height: 1.15;">
+                        <strong>Observação sobre entregáveis nos pacotes de horas:</strong>
+                        <p style="margin: 4pt 0 0 0; line-height: 1.15;">
+                            20h e 40h/mês – Incluem 1 relatório mensal (Resumo de Entregas do Mês) e 1 reunião
+                            mensal de 1h com
+                            Ata, Plano de Ação e Registro de Decisões Técnicas
+                        </p>
+                        <p style="margin: 4pt 0 0 0; line-height: 1.15;">
+                            80h/mês – Incluem 2 relatórios mensais (Tarefas Concluídas e em Andamento, Resumo de
+                            Entregas, Evolução
+                            do Roadmap) e 2 reuniões mensais de 1h (Ata, Decisões Técnicas, Atualização de
+                            Cronograma).
+                        </p>
+                        <p style="margin: 4pt 0 0 0; line-height: 1.15;">
+                            Outsourcing – Inclui 4 reuniões mensais de 1h (Ata, Plano de Ação, Decisões Técnicas),
+                            Cronograma e
+                            relatórios completos (Resumo de Entregas, Roadmap, Tarefas, Bloqueios/Riscos,
+                            Demonstrações/prints,
+                            Burndown/Burnup, Progresso da sprint ou ciclo semanal).
+                        </p>
+                    </li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt;">
+                <p style="margin: 0 0 4pt 0; line-height: 1.15;">
+                    <strong>*Detalhamento do preço em caso de contratação de projeto Premium: R$ 00.000,00
+                        mensais.</strong>
+                </p>
+                <p style="margin: 0 0 4pt 0; line-height: 1.15;"><strong>Número total de horas mensais:</strong> 0
+                    horas mensais.</p>
+                <p style="margin: 0 0 4pt 0; line-height: 1.15;"><strong>Número de profissionais dedicados:</strong>
+                </p>
+                <p style="margin: 0 0 2pt 0; line-height: 1.15;">(02) <strong>Analista/Desenvolvedor;</strong></p>
+                <p style="margin: 0 0 2pt 0; line-height: 1.15;">(01) <strong>QA/DevOps/UX-UI;</strong></p>
+                <p style="margin: 0 0 2pt 0; line-height: 1.15;">(01) <strong>Scrum Master/Product Owner;</strong>
+                </p>
+                <p style="margin: 0; line-height: 1.15;"><strong>Investimento mensal:</strong> R$0.000,00 mensais.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <colgroup>
+        <col style="width: 33.33%;">
+        <col style="width: 33.33%;">
+        <col style="width: 33.33%;">
+    </colgroup>
+    <tbody>
+        <tr>
+            <td colspan="3"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                PRAZO FORMA DE PAGAMENTO
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <strong>Periodicidade:</strong> ( X ) Mensal
+            </td>
+            <td
+                style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <strong>Data de Faturamento/Boleto:</strong> até 72<br />
+                horas antes do vencimento
+                <p style="margin: 6pt 0 0 0; line-height: 1.15;">({{PERSON_EMAIL}})</p>
+            </td>
+            <td
+                style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <strong>Data de Vencimento:</strong><br />
+                1ª parcela DD/MM/YY;
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <colgroup>
+        <col style="width: 30%;">
+        <col style="width: 70%;">
+    </colgroup>
+    <tbody>
+        <tr>
+            <td colspan="2"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                REEMBOLSO DE DESPESAS INDENIZÁVEIS
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Despesa
+            </td>
+            <td
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Valor/Justificativa/Limites
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">Km/rodado</td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                R$ 1,50 por km/rodado em caso de deslocamentos superiores a 25 km.
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">Passagens aéreas
+            </td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Para viagens com deslocamento superior a 500 km
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">Alimentação</td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">R$ 40,00 por
+                refeição.</td>
+        </tr>
+        <tr>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">Hospedagem</td>
+            <td style="padding: 4pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">R$ 350,00 por
+                diária.</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>Comprovação de gastos:</strong> A Swift Soft comprovará os gastos mediante entrega de
+                relatório
+                pormenorizado com documentos fiscais/fidedignos que o comprovem. Devendo entregá-lo ao CLIENTE em
+                até 10
+                (dez) dias contados da realização da despesa, ficando a cargo do cliente o reembolso no prazo de até
+                05
+                (cinco) dias, contados do recebimento do relatório.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <colgroup>
+        <col style="width: 33.33%;">
+        <col style="width: 33.33%;">
+        <col style="width: 33.33%;">
+    </colgroup>
+    <tbody>
+        <tr>
+            <td colspan="3"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                INADIMPLEMENTO
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                ( X ) Vencimento antecipado do saldo devedor
+            </td>
+            <td style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>Multa:</strong> 10%
+            </td>
+            <td style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                <strong>Juros/C.M.:</strong> 0,10% ao dia / INPC-IBGE
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                Honorários Advocatícios de 10% em caso de necessidade de cobrança extrajudicial e de 20% em caso de
+                cobrança
+                judicial
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <tbody>
+        <tr>
+            <td
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                DISPOSIÇÕES GERAIS
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 9pt; border: none; font-size: 9pt;">
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>OBJETO DO CONTRATO</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O presente contrato terá por objeto a prestação de serviços de desenvolvimento software
+                    personalizado, conforme
+                    Escopo de Projeto e seus Funcionalidades descritas neste instrumento.
+                </p>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>MUDANÇAS NO ESCOPO DO PROJETO E/OU SUAS
+                        FUNCIONALIDADES</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Se a qualquer momento após a celebração deste instrumento, o CLIENTE desejar uma mudança de
+                    escopo do projeto
+                    e/ou suas funcionalidades que seja impactante, que irá alterar ou aumentar as especificações ou
+                    outros
+                    elementos, deverá enviar à Swift Soft proposta escrita especificando as mudanças desejadas.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft irá analisar cada proposta em seu parecer e levantar seu impacto, podendo sugerir
+                    ao CLIENTE um
+                    novo orçamento e/ou um novo prazo de entrega. Caso o CLIENTE aceite o novo orçamento e/ou o novo
+                    prazo, as
+                    mudanças serão implementadas conforme acordado.
+                </p>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>ACEITAÇÃO E TESTE DO SOFTWARE</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O software será considerado aceito pelo CLIENTE quando atender aos requisitos e critérios
+                    definidos no Escopo
+                    do Projeto e suas Funcionalidades, após testes e validação do CLIENTE.
+                </p>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>TREINAMENTO</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft deve fornecer ao CLIENTE o treinamento de uso do software ao CLIENTE. O treinamento
+                    será
+                    realizado conforme acordado pelas partes.
+                </p>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>MANUTENÇÃO DO SOFTWARE</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Considerando o primeiro dia da primeira entrega após a expiração do período de garantia
+                    definidos na seção
+                    deste instrumento (Garantia do Software) a Swift Soft deve oferecer os seguintes serviços de
+                    suporte ao
+                    software do cliente:
+                </p>
+                <ol style="margin: 0 0 9pt 19pt; padding: 0;">
+                    <li style="margin: 0 0 4pt 0; line-height: 1.15;">
+                        Suporte telefônico e/ou por videoconferência durante horário comercial em dias úteis de
+                        operação. Tal
+                        suporte deve incluir consultoria de operação e utilização do Software. O CLIENTE deve ser
+                        responsável por
+                        todo o código fonte e comunicação relacionada ao suporte;
+                    </li>
+                    <li style="margin: 0; line-height: 1.15;">
+                        Serviço de correção, atualização e manutenção do Swift Soft quando ocorrerem problemas e/ou
+                        modificações
+                        nos documentos, para reproduzir corretamente os erros e garantir correções no software. O
+                        suporte será
+                        prestado conforme acordado entre as partes.
+                    </li>
+                </ol>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>PAGAMENTO DA MANUTENÇÃO</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O CLIENTE deve pagar à Swift Soft por serviços de suporte ao conceito e suporte o valor de R$
+                    150,00 (cento e
+                    cinquenta) por hora, conforme a quantidade de horas utilizadas. O primeiro mês após a expiração
+                    do período de
+                    garantia não deve ser cobrado.
+                </p>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>LICENCIAMENTO E SUPORTE</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Sujeito a pagamento em horas das taxas de manutenção pelo CLIENTE, a Swift Soft garantirá a
+                    manutenção acima
+                    descrita por um mínimo de 18 horas após o término do desenvolvimento do projeto objeto deste
+                    instrumento.
+                </p>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>CESSAÇÃO DO PROJETO E 10 DIAS DE
+                        CANCELAMENTO</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Para garantir o ressarcimento de integralidade de custos de mobilização de time, bem como
+                    planejamento e
+                    execução do projeto pela Swift Soft, as seguintes condições se aplicam em caso de cessação:
+                </p>
+                <ol style="margin: 0 0 9pt 19pt; padding: 0;">
+                    <li style="margin: 0 0 4pt 0; line-height: 1.15;">
+                        Se o CLIENTE solicitar o cancelamento/encerramento do projeto em data anterior ao
+                        desenvolvimento,
+                        incidirá o pagamento de pelo menos 75% do investimento do mês em execução, somados à
+                        integralidade das
+                        horas já trabalhadas e entregues da Etapa/Módulo em uso ou projeto;
+                    </li>
+                    <li style="margin: 0; line-height: 1.15;">
+                        Se a Swift Soft encerrar o desenvolvimento do projeto sem justo motivo, deverá reembolsar ao
+                        CLIENTE de
+                        forma proporcional às horas não executadas do mês em vigor, mantendo a entrega das
+                        funcionalidades já
+                        desenvolvidas até o momento da rescisão.
+                    </li>
+                </ol>
+
+                <p style="margin: 0 0 6pt 0; line-height: 1.15;"><strong>PROPRIEDADE DO SOFTWARE</strong></p>
+                <p style="margin: 0; line-height: 1.15;">
+                    Todo e qualquer direito autoral, patente, segredo de mercado, código fonte, documentação técnica
+                    e demais
+                    propriedades intelectuais relacionadas ao software desenvolvido especificamente para o CLIENTE
+                    sob este
+                    contrato são de propriedade integral e exclusiva do DEVOR INTELIGÊNCIA ARTIFICIAL LTDA. A
+                    transferência de
+                    propriedade do código fonte e demais direitos será realizada ao final do projeto, após quitação
+                    de todas as
+                    obrigações pelas partes contratantes. Excluem-se desta transferência de propriedade:
+                    <br />
+                    a) As linguagens de programação utilizadas, que são de domínio público ou de terceiros
+                    licenciados;
+                    <br />
+                    b) Ferramentas, bibliotecas e frameworks de terceiros licenciadas que não forem desenvolvidas
+                    especificamente
+                    para este projeto;
+                    <br />
+                    c) Tecnologia Agregada, conforme definida na seção específica deste contrato.
+                    <br />
+                    O CLIENTE terá direito irrestrito de:
+                    <br />
+                    a) Instalar, utilizar, modificar e distribuir o Software desenvolvido;
+                    <br />
+                    b) Contratar terceiros para manutenção e evolução do Software;
+                    <br />
+                    c) Comercializar, licenciar ou transferir o Software a terceiros;
+                    <br />
+                    d) Acessar e utilizar todo o código fonte e documentação técnica.
+                    <br />
+                    Esta propriedade é perpétua, exclusiva e livre de royalties ou pagamentos adicionais além do
+                    investimento
+                    acordado neste contrato.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>PROPRIEDADE DA TECNOLOGIA
+                        AGREGADA</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O CLIENTE reconhece que a Swift Soft possui e mantém a licença para usar e sublicenciar várias
+                    ferramentas
+                    pré-existentes de desenvolvimento, rotinas, sub-rotinas e outros programas, dados e materiais
+                    que a Swift Soft
+                    possui ou desenvolveu para uso próprio. Estas ferramentas devem ser mantidas como “Tecnologia
+                    Agregada”.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft retém todo direito, titularidade e interesse, incluindo toda propriedade
+                    intelectual, direito de
+                    patente e segredo de mercado na Tecnologia Agregada.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Tecnologia Agregada refere-se exclusivamente à ferramenta, rotina ou componente genérico de
+                    propriedade da
+                    Swift Soft que simulem análogos ao início deste projeto e que poderão ser reutilizados em
+                    múltiplos projetos.
+                    A Tecnologia Agregada não inclui qualquer desenvolvimento específico, customização ou
+                    funcionalidade criada
+                    exclusivamente para o CLIENTE.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>ACESSO AO CÓDIGO FONTE</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O código fonte do Software, incluindo toda documentação técnica, manuais e recursos
+                    relacionados, será
+                    disponibilizado ao CLIENTE conforme estabelecido na seção “Propriedade Intelectual do Software”.
+                    A
+                    transferência completa do código fonte, repositório Git e toda documentação será realizada:
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    a) Ao término de cada fase/módulo concluído e aceito pelo CLIENTE; ou<br />
+                    b) Ao término do projeto; ou<br />
+                    c) Em caso de rescisão do contrato, proporcional ao que foi desenvolvido e pago até o momento.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O CLIENTE terá acesso total ao repositório de código e poderá realizar forks, extrações e
+                    entrega diretamente
+                    ao cliente em servidores próprios.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">Acessos aos repositórios Git com todas as
+                    permissões:</p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">a) Documentação técnica completa;</p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">b) Credenciais e acessos necessários à entrega e
+                    manutenção;</p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O código fonte deve ser usado unicamente pelo CLIENTE a fim de manter o Software e deve estar
+                    sujeito à toda
+                    restrição de uso definida neste instrumento. O CLIENTE concorda em não divulgar o código fonte a
+                    terceiros
+                    exceto se por necessidade técnica e/ou de compartilhamento de dados, conforme acordado entre as
+                    partes.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>GARANTIA</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft garante que por 12 meses após a aceitação do Software pelo CLIENTE, o Software
+                    atenderá às
+                    especificações de produto/funcionalidades quando mantido e operado de acordo com as análises,
+                    instruções da
+                    Swift Soft. Se em seus materiais e/ou entregas qualquer defeito que cause a perda de dados ou
+                    paralisação do
+                    serviço, o defeito será reparado sem custo adicional ao CLIENTE.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    a) Falha de Hardware devido a problemas de energia, problemas de mídia ambiente ou qualquer
+                    outro causa que não
+                    seja de Software;<br />
+                    b) Modificação das alterações operacionais do Software ou hardware do computador por terceiros
+                    exceto a Swift
+                    Soft, que não sejam autorizados por um representante do CLIENTE, seus funcionários ou agentes ou
+                    operem o
+                    Software. A Swift Soft não deve fornecer garantia do código se for modificado pelo CLIENTE. A
+                    Swift Soft se
+                    isenta de assistência e de manutenção se tal condição ocorrer.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>GARANTIA DE INTEGRIDADE</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft garante que todos os direitos necessários para desenvolver e transferir ao CLIENTE
+                    a propriedade
+                    integral do Software conforme estabelecido nesta cláusula. A Swift Soft garante que o Software
+                    desenvolvido
+                    não infringe direitos de propriedade intelectual de terceiros e que está livre de vírus, worms
+                    ou restrições
+                    que impeçam a transferência de propriedade ao CLIENTE. A Swift Soft se compromete a não utilizar
+                    no
+                    desenvolvimento do Software qualquer propriedade intelectual ou tecnologia que infrinja ou
+                    conflite com as
+                    obrigações estabelecidas neste instrumento ou que possa comprometer a propriedade plena do
+                    CLIENTE sobre o
+                    produto final.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>LIMITAÇÃO DA RESPONSABILIDADE</strong>
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Em nenhum caso a Swift Soft será responsável pela deliminação de uso do sistema e seus
+                    respectivos resultados,
+                    sejam eles positivos ou negativos.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A responsabilidade da Swift Soft por danos diretos e indiretos decorrentes do uso do projeto
+                    está
+                    proporcionalmente ao valor do investimento calculado por remuneração total;
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft não será responsável por falha do Software devido ao projeto, à responsabilidade da
+                    Swift Soft
+                    limita-se a 02 (dois) meses o valor do investimento do CLIENTE e o período de garantia de 12
+                    meses, exceto
+                    caso tenha um erro ou dano que possa causar riscos à vida.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Modificações realizadas por terceiros no código fonte;<br />
+                    Uso indevido do Software pelo CLIENTE.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>CONFIDENCIALIDADE</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Durante o termo deste instrumento e por 24 (vinte e quatro) meses após seu término, as PARTES
+                    terão o cuidado
+                    adequado para evitar o uso não autorizado ou a disseminação das informações confidenciais
+                    contidas neste
+                    instrumento. Cuidado adequado é pelo menos o mesmo cuidado que cada Parte tem para proteger sua
+                    própria
+                    informação confidencial de natureza semelhante.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Informação Confidencial é qualquer informação caracterizada como confidencial, ou revelação
+                    oralmente que seja
+                    indicada como confidencial, incluindo revisões ou sumariadas e identificadas em uma entrega
+                    específica.
+                    Informação Confidencial não inclui informações que:
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    a) A outra Parte já saiba antes de ser revelada;<br />
+                    b) A Parte que a revelou seja a primeira a torná-la pública;<br />
+                    c) Tenham sido desenvolvidas independentemente e não como resultado de obter uma Informação
+                    Confidencial da
+                    Parte que a revelou.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>RELACIONAMENTO E/OU PARCERIA</strong>
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Este instrumento não estabelece qualquer tipo de agenciamento, sociedade, união ou outra forma
+                    de junção de
+                    empreendimento ou que possa vincular uma Parte a outra para nomeação de representante da outra
+                    Parte.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft é um contratado independente e nem a Swift Soft nem os funcionários da Swift Soft,
+                    ou de outras
+                    contratadas fornecidas pelo Cliente, serão considerados funcionários do Cliente.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    a) A Swift Soft, para o direito único de controlar e dirigir em todos os aspectos seus locais e
+                    serviços
+                    prestados por ela (incluindo salário e benefícios) e não deve ser obrigada pelo Cliente a agir
+                    de qualquer
+                    lugar ou localidade no horário do labor;
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    b) O CLIENTE não pode determinar que a Swift Soft preste seus serviços em quaisquer locais ou
+                    regiões
+                    específicos para ser responsável pelos custos associados aos membros da Swift Soft que prestarem
+                    o serviço;
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    c) A Swift Soft pode terceirizar ou subcontratar parte de seus serviços e comunicar ao CLIENTE.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>NÃO SOLICITAÇÃO DOS FUNCIONÁRIOS DO
+                        SWIFT SOFT</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    O CLIENTE concorda em não contratar diretamente ou por intermédio de empresas interpostas, os
+                    funcionários e
+                    prestadores de serviço dedicados da Swift Soft durante o desenvolvimento deste instrumento e por
+                    um período de
+                    até 36 (trinta e seis) meses após o término deste instrumento sem o consentimento escrito da
+                    Swift Soft.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>INSTRUMENTO CONVÊNIO</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Este instrumento pode ser alterado, modificado ou substituído por instrumento escrito e assinado
+                    por ambas as
+                    partes, o qual passará a compor parte integrante deste instrumento.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>AVISOS</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    Toda aviso e outras comunicações dadas em conexão com este Instrumento devem ser por escrito e
+                    ser enviadas
+                    devidamente entregue como segue:
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    <strong>Pelo Swift Soft:</strong><br />
+                    Gestor do contrato/projeto: Jean Gustavo Marcondes Rodrigues<br />
+                    E-mail: juridico@swiftsoft.com.br
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    <strong>Pelo CLIENTE:</strong><br />
+                    Gestor do contrato/projeto: {{PERSON_NAME}}<br />
+                    E-mail: {{PERSON_EMAIL}}
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>RESCISÃO POR JUSTO MOTIVO</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    A Swift Soft poderá considerar irrecuperavelmente vencido o presente instrumento, independente
+                    de qualquer aviso
+                    judicial, extrajudicial ou praticado por seus clientes quando:
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    a) Descumprimento pelo CLIENTE de qualquer obrigação de pagamento decorrentes do presente
+                    instrumento;<br />
+                    b) Se o CLIENTE iniciar processo de recuperação judicial, falência ou insolvência civil;<br />
+                    c) Se, a partir desta data, o CLIENTE sofrer processo ilegítimo ou ilícito, sem a identificação
+                    financeira;<br />
+                    d) Se for verificada a inexistência de idoneidade, o qualquer tempo, das declarações praticadas
+                    pelo CLIENTE;<br />
+                    e) Na ocorrência de quaisquer das hipóteses contidas nos arts. 333 e 1.425 do Código Civil
+                    Brasileiro;<br />
+                    f) Violação da confidencialidade ou propriedade intelectual do CLIENTE;<br />
+                    g) Subcontratação de serviços essenciais sem autorização prévia e expressa do CLIENTE.
+                </p>
+
+                <p style="margin: 10pt 0 6pt 0; line-height: 1.15;"><strong>PENALIDADES E MULTAS</strong></p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    As penalidades previstas neste contrato aplicam-se de forma recíproca às ambas as partes.
+                </p>
+                <p style="margin: 0 0 9pt 0; line-height: 1.15;">
+                    a) Em caso de descumprimento de obrigações contratuais por qualquer das partes, a parte
+                    prejudicada poderá
+                    notificar a inadimplente para regularização em até 20 (vinte) dias úteis;<br />
+                    b) Não havendo regularização, a parte prejudicada poderá rescindir o contrato por justo
+                    motivo;<br />
+                    c) Exigir multa de 10% sobre o valor mensal do contrato;<br />
+                    d) Em caso de atraso de pagamento será regularizada;<br />
+                    e) Em caso de dano comprovado causado por uma parte à outra, a parte causadora responderá
+                    proporcionalmente ao
+                    dano causado;<br />
+                    f) Em caso de descumprimento de cláusulas de confidencialidade a multa será de 30% sobre o valor
+                    do contrato.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 6pt;">
+    <colgroup>
+        <col style="width: 45%;">
+        <col style="width: 55%;">
+    </colgroup>
+    <tbody>
+        <tr>
+            <td colspan="2"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                ASSINATURAS DAS PARTES
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <strong>Ass:</strong>
+            </td>
+            <td
+                style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <strong>Ass:</strong>
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 9pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <p style="margin: 0 0 4pt 0; line-height: 1.15;"><strong>Swift Soft:</strong></p>
+                <p style="margin: 0; line-height: 1.15;"><strong>Representante Legal:</strong> Jean Gustavo
+                    Marcondes Rodrigues</p>
+            </td>
+            <td
+                style="padding: 9pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <p style="margin: 0 0 4pt 0; line-height: 1.15;"><strong>CLIENTE:</strong></p>
+                <p style="margin: 0; line-height: 1.15;"><strong>Sócio Administrador:</strong> {{PERSON_NAME}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"
+                style="padding: 4pt; text-align: center; font-weight: bold; border: 0.75pt solid #000; font-size: 9pt; line-height: 1.15;">
+                TESTEMUNHAS
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <strong>Ass:</strong>
+            </td>
+            <td
+                style="padding: 6pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <strong>Ass:</strong>
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 9pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <p style="margin: 0 0 2pt 0; line-height: 1.15;"><strong>Nome Completo:</strong> Jean Gustavo
+                    Marcondes Rodrigues</p>
+                <p style="margin: 0; line-height: 1.15;"><strong>CPF:</strong> 079.124.649-30</p>
+            </td>
+            <td
+                style="padding: 9pt; border: 0.75pt solid #000; font-size: 9pt; vertical-align: top; line-height: 1.15;">
+                <p style="margin: 0 0 2pt 0; line-height: 1.15;"><strong>Nome Completo:</strong> Higor Melo Soares
+                </p>
+                <p style="margin: 0; line-height: 1.15;"><strong>CPF:</strong> 123.167.009-69</p>
+            </td>
+        </tr>
+    </tbody>
+</table>

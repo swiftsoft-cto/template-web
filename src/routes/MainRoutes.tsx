@@ -58,11 +58,6 @@ const NewContractPage = Loadable(lazy(() => import('pages/contracts/new')));
 const ContractViewPage = Loadable(lazy(() => import('pages/contracts/[id]')));
 const EditContractPage = Loadable(lazy(() => import('pages/contracts/[id]/edit')));
 
-// Transcrições
-const TranscriptionsPage = Loadable(lazy(() => import('pages/transcriptions')));
-const TranscriptionNewPage = Loadable(lazy(() => import('pages/transcriptions/new')));
-const TranscriptionDetailPage = Loadable(lazy(() => import('pages/transcriptions/[id]')));
-const TranscriptionUpgradePage = Loadable(lazy(() => import('pages/transcriptions/UpgradePage')));
 
 // NOVO: Financeiro
 
@@ -173,22 +168,7 @@ const MainRoutes = {
           path: 'contracts',
           element: <ContractsPage />
         },
-        {
-          path: 'transcriptions',
-          element: <TranscriptionsPage />
-        },
-        {
-          path: 'transcriptions/new',
-          element: <TranscriptionNewPage />
-        },
-        {
-          path: 'transcriptions/upgrade',
-          element: <TranscriptionUpgradePage />
-        },
-        {
-          path: 'transcriptions/:id',
-          element: <TranscriptionDetailPage />
-        }
+        
       ]
     },
     {

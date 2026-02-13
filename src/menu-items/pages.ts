@@ -156,33 +156,7 @@ const pages: NavItemType = {
         }
       ]
     },
-    // 👇 Menu "Transcrições" (visível se tiver read ou create via filhos)
-    {
-      id: 'transcriptions',
-      title: 'transcriptions',
-      type: 'collapse',
-      icon: icons.AudioOutlined,
-      rule: 'transcriptions.read',
-      permissionDisabled: true,
-      children: [
-        {
-          id: 'transcriptions-list',
-          title: 'transcriptions-list',
-          type: 'item',
-          icon: icons.AudioOutlined,
-          url: '/transcriptions',
-          rule: 'transcriptions.read'
-        },
-        {
-          id: 'transcriptions-new',
-          title: 'transcriptions-new',
-          type: 'item',
-          icon: icons.AudioOutlined,
-          url: '/transcriptions/new',
-          rule: 'transcriptions.create'
-        }
-      ]
-    }
+    
   ]
 };
 

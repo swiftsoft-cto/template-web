@@ -15,7 +15,6 @@ import { motion } from 'framer-motion';
 import useAuth from 'hooks/useAuth';
 import AuthWrapper from 'sections/auth/AuthWrapper';
 import AuthLogin from 'sections/auth/jwt/AuthLogin';
-import loginImage from 'assets/images/cases/login.png';
 
 // ================================|| TIPOS - DESTAQUE DE FUNCIONALIDADE ||================================ //
 
@@ -174,33 +173,6 @@ export default function Login() {
               overflow: 'hidden'
             }}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundImage: `url(${loginImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: theme.shape.borderRadius * 3,
-                margin: theme.spacing(2),
-                marginLeft: 0
-              }}
-            />
-            {/* Overlay escuro suave para legibilidade dos cartões */}
-            <Box
-              sx={{
-                position: 'absolute',
-                inset: 0,
-                borderRadius: theme.shape.borderRadius * 3,
-                margin: theme.spacing(2),
-                marginLeft: 0,
-                background: `linear-gradient(to top, ${alpha(theme.palette.common.black, 0.7)} 0%, ${alpha(theme.palette.common.black, 0.2)} 50%, transparent 100%)`,
-                pointerEvents: 'none'
-              }}
-            />
             {/* Destaques de funcionalidades: mesma largura e alinhamento da imagem */}
             <Box
               sx={{

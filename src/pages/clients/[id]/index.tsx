@@ -112,7 +112,7 @@ export default function ClientDetailsPage() {
 
   useEffect(() => {
     if (id) loadCustomer();
-  }, [id, loadCustomer]);
+  },);
 
   // Carrega branches assim que o cliente chega:
   // 1) Se vierem em customer.branches (tree=true), usa direto (caso MATRIZ).

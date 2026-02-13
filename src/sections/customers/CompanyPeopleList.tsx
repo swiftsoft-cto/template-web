@@ -71,12 +71,12 @@ export default function CompanyPeopleList({ companyId, newlyLinked }: Props) {
           }
         >
           <ListItemText
-            primary={link.person.fullName || link.person.customer.displayName}
+            primary={link.person?.fullName || link.person?.customer?.displayName || link.personId}
             secondary={
               <Stack direction="row" gap={1} flexWrap="wrap">
                 {link.role && <Chip size="small" variant="outlined" label={`Cargo: ${link.role}`} />}
-                {link.person.email && <Chip size="small" variant="outlined" label={link.person.email} />}
-                {link.person.phone && <Chip size="small" variant="outlined" label={link.person.phone} />}
+                {link.person?.email && <Chip size="small" variant="outlined" label={link.person.email} />}
+                {link.person?.phone && <Chip size="small" variant="outlined" label={link.person.phone} />}
               </Stack>
             }
           />

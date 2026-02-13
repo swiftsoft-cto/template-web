@@ -36,8 +36,17 @@ export type LinkedPerson = {
   personId: string;
   role?: string;
   isActive: boolean;
+  isPrimary?: boolean;
+  isLegalRepresentative?: boolean;
   createdAt: string;
   updatedAt: string;
+  person?: {
+    fullName?: string;
+    email?: string;
+    phone?: string;
+    cpf?: string;
+    customer?: { id?: string; displayName?: string };
+  };
 };
 
 /**

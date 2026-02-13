@@ -89,8 +89,9 @@ export default function CompanyPeoplePanel({ customerId }: { customerId: string 
 
   const CardRow = ({ link }: { link: LinkedPerson }) => {
     const p = link.person;
-    const canOpen = !!p?.customerId;
-    const go = () => canOpen && nav(`/clients/${p.customerId}`);
+    const clientId = p?.customer?.id;
+    const canOpen = !!clientId;
+    const go = () => canOpen && clientId && nav(`/clients/${clientId}`);
 
     return (
       <Stack
@@ -106,12 +107,12 @@ export default function CompanyPeoplePanel({ customerId }: { customerId: string 
         }}
       >
         <Avatar size="sm" color="primary">
-          {initials(p.fullName || '?')}
+          {initials(p?.fullName || '?')}
         </Avatar>
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Stack direction="row" justifyContent="space-between" alignItems="center">
-            <Typography variant="subtitle2" noWrap title={p.fullName}>
-              {p.fullName}
+            <Typography variant="subtitle2" noWrap title={p?.fullName}>
+              {p?.fullName}
             </Typography>
             <Stack direction="row" gap={0.5} flexWrap="wrap">
               {link.isPrimary && <Chip size="small" label="Principal" />}
@@ -120,9 +121,9 @@ export default function CompanyPeoplePanel({ customerId }: { customerId: string 
             </Stack>
           </Stack>
           <Typography variant="caption" color="text.secondary">
-            {p.cpf ? `CPF ${maskCPF(p.cpf)}` : ''}
-            {p.email ? ` • ${p.email}` : ''}
-            {p.phone ? ` • ${p.phone}` : ''}
+            {p?.cpf ? `CPF ${maskCPF(p.cpf)}` : ''}
+            {p?.email ? ` • ${p.email}` : ''}
+            {p?.phone ? ` • ${p.phone}` : ''}
           </Typography>
         </Box>
         {canOpen ? (

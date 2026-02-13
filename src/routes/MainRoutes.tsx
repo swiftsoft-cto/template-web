@@ -36,14 +36,6 @@ const NewClientPage = Loadable(lazy(() => import('pages/clients/new')));
 const ClientDetailsPage = Loadable(lazy(() => import('pages/clients/[id]')));
 const EditClientPage = Loadable(lazy(() => import('pages/clients/[id]/edit')));
 
-// NOVO: Projetos
-const ProjectsPage = Loadable(lazy(() => import('pages/projects')));
-
-// NOVO: Escopos
-const ScopesPage = Loadable(lazy(() => import('pages/scopes')));
-const NewScopePage = Loadable(lazy(() => import('pages/scopes/new')));
-const ScopeViewPage = Loadable(lazy(() => import('pages/scopes/[id]')));
-const EditScopePage = Loadable(lazy(() => import('pages/scopes/[id]/edit')));
 
 // NOVO: Bloqueios de Conta
 const AccountBlocksPage = Loadable(lazy(() => import('pages/security/account-blocks')));
@@ -119,27 +111,7 @@ const MainRoutes = {
           path: 'clients/:id/edit',
           element: <EditClientPage />
         },
-        {
-          path: 'projects',
-          element: <ProjectsPage />
-        },
-        {
-          path: 'scopes',
-          element: <ScopesPage />
-        },
-        {
-          path: 'scopes/new',
-          element: <NewScopePage />
-        },
-        {
-          path: 'scopes/:id',
-          element: <ScopeViewPage />
-        },
-        {
-          path: 'scopes/:id/edit',
-          element: <EditScopePage />
-        },
-        {
+                {
           path: 'sensitive-fields',
           element: <SensitiveFieldsPage />
         },

@@ -21,7 +21,6 @@ import { SidebarContent, SidebarFooter, SidebarMenu, SidebarMenuItem, SidebarMen
 // assets
 import UserOutlined from '@ant-design/icons/UserOutlined';
 import LogoutOutlined from '@ant-design/icons/LogoutOutlined';
-import RocketOutlined from '@ant-design/icons/RocketOutlined';
 import CommentOutlined from '@ant-design/icons/CommentOutlined';
 import SafetyOutlined from '@ant-design/icons/SafetyOutlined';
 import SettingOutlined from '@ant-design/icons/SettingOutlined';
@@ -42,7 +41,6 @@ export default function DrawerContent() {
 
   // Verificar se a rota atual corresponde aos caminhos dos itens do footer
   const isAccountSelected = !!matchPath({ path: '/account', end: false }, pathname);
-  const isUpgradeSelected = !!matchPath({ path: '/transcriptions/upgrade', end: false }, pathname);
   const isDevicesSelected = !!matchPath({ path: '/devices', end: false }, pathname);
   const isBlocksSelected = !!matchPath({ path: '/blocks', end: false }, pathname);
   const isSensitiveFieldsSelected = !!matchPath({ path: '/sensitive-fields', end: false }, pathname);
@@ -220,17 +218,6 @@ export default function DrawerContent() {
               </Box>
             </Collapse>
           </Permission>
-
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              icon={<RocketOutlined />}
-              selected={isUpgradeSelected}
-              onClick={() => handleNavigation('/transcriptions/upgrade')}
-            >
-              Upgrade
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-
           <SidebarMenuItem>
             <SidebarMenuButton icon={<LogoutOutlined />} onClick={handleLogout}>
               Logout

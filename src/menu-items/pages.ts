@@ -5,12 +5,6 @@ import AppstoreOutlined from '@ant-design/icons/AppstoreOutlined';
 import SettingOutlined from '@ant-design/icons/SettingOutlined';
 import UserOutlined from '@ant-design/icons/UserOutlined';
 import BankOutlined from '@ant-design/icons/BankOutlined';
-import WalletOutlined from '@ant-design/icons/WalletOutlined';
-import ProjectOutlined from '@ant-design/icons/ProjectOutlined';
-import FolderOpenOutlined from '@ant-design/icons/FolderOpenOutlined';
-import FileTextOutlined from '@ant-design/icons/FileTextOutlined';
-import FileOutlined from '@ant-design/icons/FileOutlined';
-import AudioOutlined from '@ant-design/icons/AudioOutlined';
 import AIIcon from 'components/icons/AIIcon';
 
 // type
@@ -24,12 +18,6 @@ const icons = {
   SettingOutlined,
   UserOutlined,
   BankOutlined,
-  WalletOutlined,
-  ProjectOutlined,
-  FolderOpenOutlined,
-  FileTextOutlined,
-  FileOutlined,
-  AudioOutlined,
   AIIcon
 };
 
@@ -97,65 +85,7 @@ const pages: NavItemType = {
         }
       ]
     },
-    // 👇 Menu "Gestão de Projetos"
-    {
-      id: 'software-management',
-      title: 'software-management',
-      type: 'collapse',
-      icon: icons.ProjectOutlined,
-      children: [
-        {
-          id: 'projects',
-          title: 'projects',
-          type: 'item',
-          icon: icons.FolderOpenOutlined,
-          url: '/projects',
-          rule: 'projects.read'
-        },
-        {
-          id: 'scopes',
-          title: 'scopes',
-          type: 'item',
-          icon: icons.FolderOpenOutlined,
-          url: '/scopes',
-          rule: 'projects-management.scopes.read'
-        }
-      ]
-    },
-    // 👇 Menu "Jurídico"
-    {
-      id: 'legal',
-      title: 'legal',
-      type: 'collapse',
-      icon: icons.FileTextOutlined,
-      children: [
-        // 👇 Submenu "Contrato"
-        {
-          id: 'legal-contract',
-          title: 'contract',
-          type: 'collapse',
-          icon: icons.FileTextOutlined,
-          children: [
-            {
-              id: 'contract-templates',
-              title: 'contract-templates',
-              type: 'item',
-              icon: icons.FileOutlined,
-              url: '/contracts/templates',
-              rule: 'projects-management.contracts.templates.read'
-            },
-            {
-              id: 'contracts-list',
-              title: 'contracts',
-              type: 'item',
-              icon: icons.FileTextOutlined,
-              url: '/contracts',
-              rule: 'projects-management.contracts.read'
-            }
-          ]
-        }
-      ]
-    },
+   
     
   ]
 };

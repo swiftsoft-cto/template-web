@@ -110,10 +110,6 @@ export default function ClientDetailsPage() {
     } catch {}
   };
 
-  useEffect(() => {
-    if (id) loadCustomer();
-  },);
-
   // Carrega branches assim que o cliente chega:
   // 1) Se vierem em customer.branches (tree=true), usa direto (caso MATRIZ).
   // 2) Se for FILIAL (tem parent), busca branches da MATRIZ e remove ela própria (mostra as "irmãs").
@@ -195,6 +191,10 @@ export default function ClientDetailsPage() {
       setLoading(false);
     }
   }, [id]);
+
+  useEffect(() => {
+    if (id) loadCustomer();
+  }, [id, loadCustomer]);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);

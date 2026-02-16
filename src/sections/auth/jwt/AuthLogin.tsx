@@ -82,15 +82,16 @@ export default function AuthLogin({ isDemo = false, registerPath }: AuthLoginPro
     '& .MuiOutlinedInput-input:focus': { outline: 'none' }
   };
 
+  const isLight = theme.palette.mode === 'light';
   const glassWrapperSx = {
     borderRadius: 2,
     border: '1px solid',
-    borderColor: 'divider',
-    bgcolor: 'transparent',
+    borderColor: isLight ? alpha(theme.palette.divider, 0.8) : 'divider',
+    bgcolor: isLight ? alpha(theme.palette.background.paper, 0.7) : 'transparent',
     transition: 'border-color 0.2s, background-color 0.2s',
     '&:focus-within': {
       borderColor: 'primary.main',
-      bgcolor: alpha(theme.palette.primary.main, 0.06)
+      bgcolor: alpha(theme.palette.primary.main, isLight ? 0.12 : 0.06)
     }
   };
 

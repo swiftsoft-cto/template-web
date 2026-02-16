@@ -40,7 +40,23 @@ export default function Login() {
             px: { xs: 2, sm: 4 }
           }}
         >
-          <Box sx={{ width: '100%', maxWidth: 420 }}>
+          <Box
+            sx={{
+              width: '100%',
+              maxWidth: 420,
+              ...(theme.palette.mode === 'light' && {
+                bgcolor: alpha(theme.palette.background.paper, 0.92),
+                backdropFilter: 'blur(12px) saturate(120%)',
+                WebkitBackdropFilter: 'blur(12px) saturate(120%)',
+                borderRadius: 3,
+                px: 3,
+                py: 3.5,
+                boxShadow: theme.shadows[4],
+                border: '1px solid',
+                borderColor: alpha(theme.palette.divider, 0.6)
+              })
+            }}
+          >
             <AuthLogin isDemo={isLoggedIn} registerPath={undefined} />
             <Stack direction="column" alignItems="center" justifyContent="center" spacing={1} sx={{ mt: 4, pt: 2, textAlign: 'center' }}>
               <Link

@@ -1,100 +1,16 @@
 // material-ui
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import { useTheme, alpha } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-// third-party
-import { motion } from 'framer-motion';
-
 // project imports
 import useAuth from 'hooks/useAuth';
 import AuthWrapper from 'sections/auth/AuthWrapper';
 import AuthLogin from 'sections/auth/jwt/AuthLogin';
-
-// ================================|| TIPOS - DESTAQUE DE FUNCIONALIDADE ||================================ //
-
-export interface FeatureHighlight {
-  initial: string;
-  name: string;
-  handle: string;
-  text: string;
-}
-
-const FEATURE_HIGHLIGHTS: FeatureHighlight[] = [
-  {
-    initial: 'T',
-    name: 'Transcrição',
-    handle: 'Áudio e vídeo',
-    text: 'Transcreva reuniões, áudios e vídeos com precisão. Suporte a vários formatos, resumos e exportação para uso em atas e documentos.'
-  },
-  {
-    initial: 'P',
-    name: 'Projeto',
-    handle: 'Organização',
-    text: 'Organize trabalhos em projetos. Acompanhe prazos, tarefas e documentos em um só lugar, com controle de acesso por perfil.'
-  },
-  {
-    initial: 'D',
-    name: 'Documentos jurídicos',
-    handle: 'Processos e contratos',
-    text: 'Gerencie peças processuais, contratos e documentação jurídica com segurança, versionamento e busca integrada.'
-  }
-];
-
-// ================================|| CARTÃO DE FUNCIONALIDADE ||================================ //
-
-function FeatureCard({ feature, delay = 0 }: { feature: FeatureHighlight; delay?: number }) {
-  const theme = useTheme();
-
-  return (
-    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay }}>
-      <Card
-        sx={{
-          display: 'flex',
-          alignItems: 'flex-start',
-          gap: 1.5,
-          p: 2,
-          borderRadius: 2,
-          maxWidth: 280,
-          bgcolor: theme.palette.mode === 'dark' ? alpha(theme.palette.common.white, 0.1) : alpha(theme.palette.common.white, 0.92),
-          backdropFilter: 'blur(12px)',
-          border: '1px solid',
-          borderColor: theme.palette.divider,
-          boxShadow: theme.shadows[2]
-        }}
-      >
-        <Avatar
-          sx={{
-            width: 40,
-            height: 40,
-            borderRadius: 2,
-            bgcolor: theme.palette.primary.main,
-            color: theme.palette.primary.contrastText,
-            fontWeight: 700
-          }}
-        >
-          {feature.initial}
-        </Avatar>
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography variant="subtitle2" fontWeight={600}>
-            {feature.name}
-          </Typography>
-          <Typography variant="caption" color="text.secondary" display="block">
-            {feature.handle}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, lineHeight: 1.5 }}>
-            {feature.text}
-          </Typography>
-        </Box>
-      </Card>
-    </motion.div>
-  );
-}
+import loginImage from 'assets/images/cases/login.png';
 
 // ================================|| JWT - ENTRAR ||================================ //
 
@@ -170,31 +86,29 @@ export default function Login() {
               flex: 1,
               position: 'relative',
               minHeight: 320,
-              overflow: 'hidden'
+              overflow: 'hidden',
+              borderRadius: 3,
+              border: '1px solid',
+              borderColor: alpha(theme.palette.common.white, 0.12),
+              boxShadow: theme.shadows[4],
+              m: 2
             }}
           >
-            {/* Destaques de funcionalidades: mesma largura e alinhamento da imagem */}
             <Box
+              component="img"
+              src={loginImage}
+              alt="Login"
               sx={{
                 position: 'absolute',
-                bottom: theme.spacing(3),
+                top: 0,
                 left: 0,
-                right: theme.spacing(2),
-                display: 'grid',
-                gridTemplateColumns: {
-                  xs: '1fr',
-                  md: 'repeat(2, 1fr)',
-                  lg: 'repeat(3, 1fr)'
-                },
-                gap: 2,
-                alignItems: 'end',
-                px: 2
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                borderRadius: 3
               }}
-            >
-              <FeatureCard feature={FEATURE_HIGHLIGHTS[0]} delay={0.3} />
-              <FeatureCard feature={FEATURE_HIGHLIGHTS[1]} delay={0.45} />
-              <FeatureCard feature={FEATURE_HIGHLIGHTS[2]} delay={0.6} />
-            </Box>
+            />
           </Box>
         )}
       </Box>

@@ -30,7 +30,10 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
   const themeTypography: TypographyVariantsOptions = useMemo<TypographyVariantsOptions>(() => Typography(fontFamily), [fontFamily]);
 
   const themeCustomShadows: CustomShadowProps = useMemo<CustomShadowProps>(() => CustomShadows(theme), [theme]);
-  const themeCustomGradients: CustomGradientProps = useMemo<CustomGradientProps>(() => CustomGradients(theme), [theme]);
+  const themeCustomGradients: CustomGradientProps = useMemo<CustomGradientProps>(
+    () => CustomGradients(theme, presetColor),
+    [theme, presetColor]
+  );
 
   const themeOptions: ThemeOptions = useMemo(
     () => ({

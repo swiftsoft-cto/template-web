@@ -247,11 +247,12 @@ export default function AuthLogin({ isDemo = false, registerPath }: AuthLoginPro
                     component={RouterLink}
                     to={forgotPasswordUrl}
                     variant="body2"
+                    underline="hover"
                     sx={{
-                      color: 'primary.main',
-                      fontWeight: 500,
+                      color: 'text.primary',
+                      fontWeight: 600,
                       textDecoration: 'none',
-                      '&:hover': { textDecoration: 'underline', color: 'primary.dark' }
+                      '&:hover': { textDecoration: 'underline', color: 'text.primary', opacity: 0.9 }
                     }}
                   >
                     Redefinir senha
@@ -295,7 +296,8 @@ export default function AuthLogin({ isDemo = false, registerPath }: AuthLoginPro
                     <Link
                       component={RouterLink}
                       to={registerPath}
-                      sx={{ color: 'primary.main', fontWeight: 500, '&:hover': { textDecoration: 'underline' } }}
+                      underline="hover"
+                      sx={{ color: 'text.primary', fontWeight: 600, '&:hover': { color: 'text.primary', opacity: 0.9 } }}
                     >
                       Criar conta
                     </Link>

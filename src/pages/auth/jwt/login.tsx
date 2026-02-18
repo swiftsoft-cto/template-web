@@ -63,9 +63,8 @@ export default function Login() {
                 href="https://swiftsoft.com.br/terms/"
                 target="_blank"
                 variant="caption"
-                color="primary.main"
                 underline="hover"
-                sx={{ '&:hover': { color: 'primary.dark' } }}
+                sx={{ color: 'text.primary', fontWeight: 600, '&:hover': { color: 'text.primary', opacity: 0.9 } }}
               >
                 Termos e Condições
               </Link>
@@ -73,9 +72,8 @@ export default function Login() {
                 href="https://swiftsoft.com.br/privacy/"
                 target="_blank"
                 variant="caption"
-                color="primary.main"
                 underline="hover"
-                sx={{ '&:hover': { color: 'primary.dark' } }}
+                sx={{ color: 'text.primary', fontWeight: 600, '&:hover': { color: 'text.primary', opacity: 0.9 } }}
               >
                 Política de Privacidade
               </Link>
@@ -85,8 +83,7 @@ export default function Login() {
                   href="https://swiftsoft.com.br/"
                   target="_blank"
                   underline="hover"
-                  color="primary.main"
-                  sx={{ '&:hover': { color: 'primary.dark' } }}
+                  sx={{ color: 'text.primary', fontWeight: 600, '&:hover': { color: 'text.primary', opacity: 0.9 } }}
                 >
                   Swift Soft
                 </Link>

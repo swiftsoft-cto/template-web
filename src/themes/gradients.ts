@@ -3,6 +3,7 @@ import { Theme, alpha } from '@mui/material/styles';
 // types
 import { CustomGradientProps } from 'types/theme';
 import { ThemeMode } from 'config';
+import { PresetColor } from 'types/config';
 
 type PrimaryScale = {
   darker?: string;
@@ -17,28 +18,34 @@ type PrimaryScale = {
 };
 
 // Direção: superior esquerdo (tom mais escuro) → inferior direito (tom mais claro)
-const GRADIENT_DIR = 'to top left';
+const GRADIENT_DIR = 'to bottom right';
+
+// theme1: gradiente verde escuro (160deg, preto-esverdeado → transparente)
+const THEME1_GRADIENT =
+  'linear-gradient(160deg, rgba(0, 8, 0, 0.96) 0%, rgba(0, 10, 0, 0.94) 45%, rgba(0, 13, 0, 0.18) 100%)';
 
 // ==============================|| CUSTOM GRADIENTS (MODELO PARA TODOS OS TEMAS) ||============================== //
 /**
- * Modelo único para todos os temas:
- * - Lado superior esquerdo = tom mais escuro do primary do tema.
- * - Lado inferior direito = tom mais claro do primary do tema.
+ * theme1: usa gradiente fixo verde escuro.
+ * Demais temas: superior esquerdo = tom mais escuro do primary → inferior direito = tom mais claro.
  */
-export default function CustomGradients(theme: Theme): CustomGradientProps {
+export default function CustomGradients(theme: Theme, presetColor?: PresetColor): CustomGradientProps {
+  if (presetColor === 'theme1') {
+    return {
+      appBg: THEME1_GRADIENT,
+      paperBg: THEME1_GRADIENT,
+      toolbarBg: THEME1_GRADIENT
+    };
+  }
+
   const isDark = theme.palette.mode === ThemeMode.DARK;
   const p = (theme.palette.primary || {}) as unknown as PrimaryScale;
 
-  // Tom mais escuro do tema (superior esquerdo)
   const tomMaisEscuro = p.darker || p[900] || p.dark || p.main || '#0a0a0a';
-  // Tom mais claro do tema (inferior direito)
   const tomMaisClaro = p.lighter || p[50] || p[100] || p.light || p.main || '#888';
-
   const op = (a: number, b: number) => (isDark ? a : b);
-
   const mid = p.main || p.dark || tomMaisEscuro;
 
-  // 0% = superior esquerdo (tom mais escuro) → 100% = inferior direito (tom mais claro)
   const appBg = `
     linear-gradient(
       ${GRADIENT_DIR},

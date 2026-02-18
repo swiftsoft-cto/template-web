@@ -25,6 +25,7 @@ import { Formik } from 'formik';
 import { bindMask, formatCPF, formatCNPJ, formatPhoneBR, formatCEP, digitsOnly } from 'utils/mask';
 import { openSnackbar } from 'api/snackbar';
 import { createUser, updateUser, listRoles } from 'api/users';
+import { isAdminRoleName } from 'utils/roles';
 import useAuth from 'hooks/useAuth';
 
 type Props = {
@@ -210,6 +211,22 @@ export default function UserFormDialog({ open, onClose, editingId, initial, onSa
         onSubmit={async (values, { setSubmitting, setErrors }) => {
           try {
             if (isEdit && editingId) {
+              const removendoAdminDaPropriaConta =
+                isEditingCurrentUser &&
+                isAdminRoleName(initial?.roleName) &&
+                !isAdminRoleName(findRoleById(values.roleId)?.name);
+              if (removendoAdminDaPropriaConta) {
+                const msg = 'Você não pode remover a função de administrador da sua própria conta.';
+                setErrors({ email: msg });
+                openSnackbar({
+                  open: true,
+                  message: msg,
+                  variant: 'alert',
+                  alert: { color: 'error' }
+                } as any);
+                setSubmitting(false);
+                return;
+              }
               const response = await updateUser(editingId, {
                 name: values.name,
                 email: values.email,
@@ -249,6 +266,14 @@ export default function UserFormDialog({ open, onClose, editingId, initial, onSa
                 variant: 'alert',
                 alert: { color: 'success' }
               } as any);
+              if (isAdminRoleName(initial?.roleName) && !isAdminRoleName(findRoleById(values.roleId)?.name)) {
+                openSnackbar({
+                  open: true,
+                  message: 'Atenção: administrador removido deste usuário.',
+                  variant: 'alert',
+                  alert: { color: 'warning' }
+                } as any);
+              }
             } else {
               const response = await createUser({
                 name: values.name,
@@ -280,6 +305,12 @@ export default function UserFormDialog({ open, onClose, editingId, initial, onSa
           } catch (err: any) {
             const msg = err?.response?.data?.message || err.message || 'Erro ao salvar';
             setErrors({ email: msg });
+            openSnackbar({
+              open: true,
+              message: msg,
+              variant: 'alert',
+              alert: { color: 'error' }
+            } as any);
           } finally {
             setSubmitting(false);
           }

@@ -156,6 +156,22 @@ export async function getUserExtraRules(userId: string) {
 }
 
 /**
+ * Adiciona uma regra extra ao usuário.
+ * POST /users/:userId/extra-rules (exige JWT + users.update).
+ */
+export async function addUserExtraRule(
+  userId: string,
+  payload: { ruleId: string; source?: string; expiresAt?: string | null }
+) {
+  const { data } = await axios.post<{ message: string }>(`/users/${userId}/extra-rules`, {
+    ruleId: payload.ruleId,
+    source: payload.source ?? 'manual',
+    expiresAt: payload.expiresAt ?? null
+  });
+  return data;
+}
+
+/**
  * Revoga (soft) uma regra extra do usuário.
  * DELETE /users/:userId/extra-rules/:ruleId (exige JWT + users.update).
  */

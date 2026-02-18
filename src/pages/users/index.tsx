@@ -71,6 +71,7 @@ export default function UsersPage() {
   const [rolePickerOpen, setRolePickerOpen] = useState(false);
   const [roleUserId, setRoleUserId] = useState<string | null>(null);
   const [roleCurrentId, setRoleCurrentId] = useState<string | null>(null);
+  const [roleCurrentName, setRoleCurrentName] = useState<string | null>(null);
 
   const [extraRulesOpen, setExtraRulesOpen] = useState(false);
   const [extraRulesUser, setExtraRulesUser] = useState<{ id: string; name: string } | null>(null);
@@ -199,6 +200,7 @@ export default function UsersPage() {
   const openRole = (u: UserRow) => {
     setRoleUserId(u.id);
     setRoleCurrentId(u.role?.id || null);
+    setRoleCurrentName(u.role?.name ?? null);
     setRolePickerOpen(true);
   };
 
@@ -616,6 +618,7 @@ export default function UsersPage() {
         onClose={() => setRolePickerOpen(false)}
         userId={roleUserId}
         currentRoleId={roleCurrentId || undefined}
+        currentRoleName={roleCurrentName ?? undefined}
         onChanged={load}
       />
       <UserExtraRulesDialog

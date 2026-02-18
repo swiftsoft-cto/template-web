@@ -82,8 +82,14 @@ export const JWTProvider = ({ children }: { children: React.ReactElement }) => {
         payload: { isLoggedIn: true, user: userData, expiresIn }
       });
     } catch (error: any) {
-      // Extrai a mensagem de erro da API ou usa uma mensagem padrão
-      const errorMessage = error.response?.data?.message || error.message || 'Erro ao fazer login';
+      // Network Error = servidor inacessível (não está rodando, URL errada, CORS, etc.)
+      const isNetworkError =
+        error.code === 'ERR_NETWORK' ||
+        error.message === 'Network Error' ||
+        (error.message && String(error.message).toLowerCase().includes('network error'));
+      const errorMessage = isNetworkError
+        ? 'Não foi possível conectar ao servidor. Verifique se a API está rodando e se a URL está correta (arquivo .env: VITE_APP_API_URL).'
+        : error.response?.data?.message || error.message || 'Erro ao fazer login';
       throw new Error(errorMessage);
     }
   };

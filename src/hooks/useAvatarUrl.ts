@@ -40,8 +40,12 @@ export default function useAvatarUrl(userId?: string | null, avatarFileId?: stri
 
         objectUrl = URL.createObjectURL(res.data);
         if (!cancelled) setUrl(objectUrl);
-      } catch (e) {
-        console.error('Falha ao carregar avatar:', e);
+      } catch (e: any) {
+        // 404 = usuário sem avatar; não logar como erro
+        const status = e?.response?.status;
+        if (status !== 404) {
+          console.error('Falha ao carregar avatar:', e);
+        }
         if (!cancelled) setUrl(null);
       }
     }

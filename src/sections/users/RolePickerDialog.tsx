@@ -13,19 +13,28 @@ import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
 import { listRoles, setUserRole } from 'api/users';
 import { openSnackbar } from 'api/snackbar';
+import { isAdminRoleName } from '../../utils/roles';
+import useAuth from 'hooks/useAuth';
+
+const MSG_NAO_PODE_REMOVER_ADM_CONTA = 'Você não pode remover a função de administrador da sua própria conta.';
 
 type Props = {
   open: boolean;
   onClose: () => void;
   userId: string | null;
   currentRoleId?: string | null;
+  /** Nome da função atual (para avisar quando administrador for removido) */
+  currentRoleName?: string | null;
   onChanged: () => void;
 };
 
-export default function RolePickerDialog({ open, onClose, userId, currentRoleId, onChanged }: Props) {
+export default function RolePickerDialog({ open, onClose, userId, currentRoleId, currentRoleName, onChanged }: Props) {
+  const { user: currentUser } = useAuth();
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [roles, setRoles] = useState<Array<{ id: string; name: string; description?: string | null }>>([]);
+
+  const isEditingSelf = Boolean(userId && currentUser?.id && userId === currentUser.id);
 
   async function load() {
     try {
@@ -65,15 +74,43 @@ export default function RolePickerDialog({ open, onClose, userId, currentRoleId,
                   selected={r.id === currentRoleId}
                   onClick={async () => {
                     if (!userId) return;
-                    const response = await setUserRole(userId, r.id);
-                    openSnackbar({
-                      open: true,
-                      message: response.message || 'Função definida!',
-                      variant: 'alert',
-                      alert: { color: 'success' }
-                    } as any);
-                    onChanged();
-                    onClose();
+                    const removendoAdmin = isAdminRoleName(currentRoleName) && !isAdminRoleName(r.name);
+                    if (isEditingSelf && removendoAdmin) {
+                      openSnackbar({
+                        open: true,
+                        message: MSG_NAO_PODE_REMOVER_ADM_CONTA,
+                        variant: 'alert',
+                        alert: { color: 'error' }
+                      } as any);
+                      return;
+                    }
+                    try {
+                      await setUserRole(userId, r.id);
+                      if (removendoAdmin) {
+                        openSnackbar({
+                          open: true,
+                          message: 'Atenção: administrador removido deste usuário.',
+                          variant: 'alert',
+                          alert: { color: 'warning' }
+                        } as any);
+                      } else {
+                        openSnackbar({
+                          open: true,
+                          message: 'Função definida!',
+                          variant: 'alert',
+                          alert: { color: 'success' }
+                        } as any);
+                      }
+                      onChanged();
+                      onClose();
+                    } catch (err: any) {
+                      openSnackbar({
+                        open: true,
+                        message: err?.response?.data?.message || 'Não foi possível alterar a função.',
+                        variant: 'alert',
+                        alert: { color: 'error' }
+                      } as any);
+                    }
                   }}
                 >
                   <ListItemText primary={<Typography fontWeight={600}>{r.name}</Typography>} secondary={r.description || ''} />

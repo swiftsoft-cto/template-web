@@ -163,6 +163,8 @@
   "users": "Users",
   "company": "Company",
   "administration": "Administration",
+  "administration-panel": "Panel",
+  "administration-functions": "Available functions",
   "account-blocks": "Account Blocks",
   "block": "Block",
   "unblock": "Unblock",

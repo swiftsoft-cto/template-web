@@ -30,6 +30,9 @@ const DepartmentsPage = Loadable(lazy(() => import('pages/departments')));
 // NOVO: Empresa
 const CompanyPage = Loadable(lazy(() => import('pages/company')));
 
+// Administração (abas: Funções, Clientes, Uso da IA)
+const AdministrationPage = Loadable(lazy(() => import('pages/administration')));
+
 // NOVO: Clientes
 const ClientsPage = Loadable(lazy(() => import('pages/clients')));
 const NewClientPage = Loadable(lazy(() => import('pages/clients/new')));
@@ -94,6 +97,10 @@ const MainRoutes = {
         {
           path: 'company',
           element: <CompanyPage />
+        },
+        {
+          path: 'administration',
+          element: <AdministrationPage />
         },
         {
           path: 'clients',
